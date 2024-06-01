@@ -1,6 +1,6 @@
 {
   "name": "tgutil",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "commander": "^12.1.0"
   },
   "devDependencies": {
+    "@types/node": "^18.18.0"
   },
   "bin": "./bin.js"
 }

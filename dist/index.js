@@ -2,6 +2,9 @@
 const Telegraf = require('telegraf');
 const bot = new Telegraf(process.env.TOKEN);
 // ## REQUIRES ##
+// ## INITIALIZE ##
+
+// ## INITIALIZE ##
 // ## MIDDLEWARES ##
 
 // ## MIDDLEWARES ##

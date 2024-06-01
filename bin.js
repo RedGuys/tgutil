@@ -7,4 +7,14 @@ program
     .description("Initialize a new project")
     .action(async (directory) => await require('./init')(directory))
 
+program
+    .command("module:add <name>")
+    .description("Adds module to project")
+    .action(async (name) => await require('./moduleAdd')(name))
+
+program
+    .command("module:list")
+    .description("Lists all modules")
+    .action(async () => await require('./moduleList')())
+
 program.parse();

@@ -1,10 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const child = require('child_process');
-const utils = require('./utils');
+const utils = require('../utils');
 
 module.exports = async function (name) {
-    let file = path.join(__dirname, "modules", name + ".js");
+    let file = path.join(__dirname, "..", "modules", name + ".js");
     if (!fs.existsSync(file)) {
         console.log(`Module ${name} not found`);
         return;
@@ -14,9 +14,12 @@ module.exports = async function (name) {
         console.log("Project not initialized. Run 'init' command first.");
         return;
     }
+    let module = require(file);
+
+    let rl = utils.initRL();
+    await module.ask(rl);
 
     utils.updateLine("- Registering module...");
-    let module = require(file);
     let package = require(packageFile);
     if (!package.dependencies) {
         package.dependencies = {};
@@ -45,4 +48,5 @@ module.exports = async function (name) {
     module.patch();
     utils.finishLine("- Project patched!");
     console.log("Module added successfully!");
+    rl.close();
 }

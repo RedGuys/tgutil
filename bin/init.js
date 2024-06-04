@@ -1,4 +1,4 @@
-const utils = require('./utils');
+const utils = require('../utils');
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
@@ -54,7 +54,7 @@ module.exports = async function (directory) {
   </configuration>
 </component>`);
     fs.writeFileSync(path.join(dir, ".gitignore"), "node_modules\n.idea\n");
-    fs.cpSync(path.join(__dirname, "dist", "index.js"), path.join(dir, "index.js"));
+    fs.cpSync(path.join(__dirname, "..", "dist", "index.js"), path.join(dir, "index.js"));
     utils.finishLine("- Project initialized!");
 
     utils.updateLine("- Installing dependencies...");

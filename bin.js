@@ -17,4 +17,9 @@ program
     .description("Lists all modules")
     .action(async () => await require('./bin/moduleList')())
 
+program
+    .command("scene:add <name>")
+    .description("Adds scene to project")
+    .action(async (name) => await require('./bin/sceneAdd')(name))
+
 program.parse();

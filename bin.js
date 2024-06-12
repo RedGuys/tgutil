@@ -22,4 +22,9 @@ program
     .description("Adds scene to project")
     .action(async (name) => await require('./bin/sceneAdd')(name))
 
+program
+    .command("handler:add <name>")
+    .description("Adds handler to project")
+    .action(async (name) => await require('./bin/handlerAdd')(name))
+
 program.parse();

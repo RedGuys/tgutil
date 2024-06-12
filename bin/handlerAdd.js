@@ -17,7 +17,7 @@ module.exports = async function (name) {
     //add scene to index.js
     let index = fs.readFileSync(path.join(process.cwd(), "index.js"), "utf-8");
     let scenes = utils.getEndOfBlock(index, "HANDLERS");
-    index = index.slice(0, scenes) + `bot.use(require("./handlers/${name}")(bot))` + index.slice(scenes);
+    index = index.slice(0, scenes) + `require("./handlers/${name}")(bot)` + index.slice(scenes);
     fs.writeFileSync(path.join(process.cwd(), "index.js"), index);
     console.log(`Handler ${name} added successfully`);
 }

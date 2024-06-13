@@ -27,4 +27,9 @@ program
     .description("Adds handler to project")
     .action(async (name) => await require('./bin/handlerAdd')(name))
 
+program
+    .command("command:add <name>")
+    .description("Adds command to project")
+    .action(async (name) => await require('./bin/commandAdd')(name))
+
 program.parse();

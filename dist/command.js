@@ -1,7 +1,7 @@
 /**
- * @param bot {Telegraf<*>}
- * @returns {(function(TelegrafContext, Function<void>): Promise<void>)|*}
+ * @param ctx {RegrafContext}
+ * @param next {function}
  */
-module.exports = (bot) => async (ctx, next) => {
+module.exports = async (ctx, next) => {
 
 };

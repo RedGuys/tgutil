@@ -6,7 +6,7 @@ module.exports = {
     name: "SessionLocal",
     description: "Module who provides memory and file storage for sessions",
     dependencies: {
-        "telegraf-session-local": "^2.1.1"
+        "@regraf/session-local": "^2.1.1"
     },
     devDependencies: {
 
@@ -29,7 +29,7 @@ module.exports = {
     patch: () => {
         let index = fs.readFileSync(path.join(process.cwd(), "index.js"), "utf-8");
         let requires = utils.getEndOfBlock(index, "REQUIRES");
-        index = index.slice(0, requires) + `const Session = require("telegraf-session-local");` + index.slice(requires);
+        index = index.slice(0, requires) + `const Session = require("@regraf/session-local");` + index.slice(requires);
         let init = utils.getStartOfBlock(index, "MIDDLEWARES");
         let options = `{storage: Session.${module.exports._mapStorage[module.exports.params.storage]}${module.exports.params.storage.endsWith("file")?`, database: "${module.exports.params.file}"`:""}}`;
         index = index.slice(0, init) + `

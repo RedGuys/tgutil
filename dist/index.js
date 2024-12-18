@@ -1,8 +1,8 @@
 // ## REQUIRES ##
-const Telegraf = require('telegraf');
+const Regraf = require('regraf');
 // ## REQUIRES ##
 // ## INITIALIZE ##
-const bot = new Telegraf(process.env.TOKEN);
+const bot = new Regraf(process.env.TOKEN);
 
 // ## INITIALIZE ##
 // ## MIDDLEWARES ##

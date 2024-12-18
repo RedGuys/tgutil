@@ -18,7 +18,7 @@ module.exports = {
         let index = fs.readFileSync(path.join(process.cwd(), "index.js"), "utf-8");
 
         let requires = utils.getEndOfBlock(index, "REQUIRES");
-        index = index.slice(0, requires) + `const Stage = require("telegraf/stage");` + index.slice(requires);
+        index = index.slice(0, requires) + `const Stage = require("regraf/stage");` + index.slice(requires);
 
         let init = utils.getEndOfBlock(index, "INITIALIZE");
         index = index.slice(0, init) + `let stage = new Stage();` + index.slice(init);

@@ -17,7 +17,8 @@ module.exports = async function (name) {
     let module = require(file);
 
     let rl = utils.initRL();
-    await module.ask(rl);
+    if(module.ask)
+        await module.ask(rl);
 
     utils.updateLine("- Registering module...");
     let package = require(packageFile);

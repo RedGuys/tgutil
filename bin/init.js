@@ -12,7 +12,7 @@ module.exports = async function (directory) {
             "start": "node index.js"
         },
         "dependencies": {
-            "telegraf": "3.38"
+            "regraf": "^1.1.6"
         },
         "keywords": [],
         "author": "",
@@ -33,7 +33,7 @@ module.exports = async function (directory) {
     package.license = await utils.ask(rl, "Enter license", "MIT");
     package.description = await utils.ask(rl, "Enter description", " ");
 
-    package.dependencies["telegraf"] = await utils.ask(rl, "Enter telegraf version", "3.38");
+    package.dependencies["regraf"] = await utils.ask(rl, "Enter regraf version", "^1.1.6");
 
     utils.updateLine("- Initializing project...");
     fs.mkdirSync(dir, {recursive:true});

@@ -1,6 +1,7 @@
 /**
- * @param bot {Regraf<*>}
+ * @param ctx {RegrafContext}
+ * @param next {function}
  */
-module.exports = (bot) => bot.use(async (ctx, next) => {
+module.exports = async (ctx, next) => {
 
-});
+};

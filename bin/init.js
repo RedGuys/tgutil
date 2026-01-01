@@ -36,9 +36,9 @@ module.exports = async function (directory) {
     package.dependencies["regraf"] = await utils.ask(rl, "Enter regraf version", "^1.1.6");
 
     utils.updateLine("- Initializing project...");
-    fs.mkdirSync(dir, {recursive:true});
+    fs.mkdirSync(dir, {recursive: true});
     fs.writeFileSync(path.join(dir, "package.json"), JSON.stringify(package, null, 2));
-    fs.mkdirSync(path.join(dir, ".idea", "runConfigurations"), {recursive:true});
+    fs.mkdirSync(path.join(dir, ".idea", "runConfigurations"), {recursive: true});
     fs.writeFileSync(path.join(dir, ".idea", "runConfigurations", "start.xml"), `<component name="ProjectRunConfigurationManager">
   <configuration default="false" name="start" type="js.build_tools.npm" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />

@@ -8,7 +8,7 @@ module.exports = async function (name) {
         fs.mkdirSync(path.join(process.cwd(), "scenes"));
     }
     //checks if scene exists
-    if (fs.existsSync(path.join(process.cwd(), "scenes", name + ".js"))){
+    if (fs.existsSync(path.join(process.cwd(), "scenes", name + ".js"))) {
         console.log(`Scene ${name} already exists`);
         return;
     }

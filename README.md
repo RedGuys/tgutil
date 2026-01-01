@@ -1,6 +1,7 @@
 # tgutil
 
-A command-line utility tool for creating and managing Telegram bot projects. This tool helps you quickly scaffold new Telegram bot projects with various modules and features.
+A command-line utility tool for creating and managing Telegram bot projects. This tool helps you quickly scaffold new
+Telegram bot projects with various modules and features.
 
 ## Installation
 
@@ -74,6 +75,7 @@ Adds a new bot command to your project.
 ### SessionLocal
 
 Provides session management with different storage options:
+
 - Memory storage (default)
 - File storage (synchronous)
 - Async file storage

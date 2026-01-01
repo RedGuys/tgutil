@@ -8,9 +8,7 @@ module.exports = {
     dependencies: {
         "@regraf/session-local": "^2.1.1"
     },
-    devDependencies: {
-
-    },
+    devDependencies: {},
     version: "1.0.0",
     params: {
         storage: "memory",
@@ -18,11 +16,11 @@ module.exports = {
     },
     ask: async (rl) => {
         let storage = "";
-        while (!["memory","file","asyncfile"].includes(storage)) {
+        while (!["memory", "file", "asyncfile"].includes(storage)) {
             storage = await utils.ask(rl, "Enter storage type (memory/file/asyncfile)", "memory");
         }
         module.exports.params.storage = storage;
-        if(["file","asyncfile"].includes(module.exports.params.storage)) {
+        if (["file", "asyncfile"].includes(module.exports.params.storage)) {
             module.exports.params.file = await utils.ask(rl, "Enter file log", "sessions.json");
         }
     },
@@ -31,7 +29,7 @@ module.exports = {
         let requires = utils.getEndOfBlock(index, "REQUIRES");
         index = index.slice(0, requires) + `const Session = require("@regraf/session-local");` + index.slice(requires);
         let init = utils.getStartOfBlock(index, "MIDDLEWARES");
-        let options = `{storage: Session.${module.exports._mapStorage[module.exports.params.storage]}${module.exports.params.storage.endsWith("file")?`, database: "${module.exports.params.file}"`:""}}`;
+        let options = `{storage: Session.${module.exports._mapStorage[module.exports.params.storage]}${module.exports.params.storage.endsWith("file") ? `, database: "${module.exports.params.file}"` : ""}}`;
         index = index.slice(0, init) + `
 bot.use((new Session(${options})).middleware());` + index.slice(init);
         fs.writeFileSync(path.join(process.cwd(), "index.js"), index);

@@ -17,7 +17,7 @@ module.exports = async function (name) {
     let module = require(file);
 
     let rl = utils.initRL();
-    if(module.ask)
+    if (module.ask)
         await module.ask(rl);
 
     utils.updateLine("- Registering module...");
@@ -34,7 +34,7 @@ module.exports = async function (name) {
     for (let dep in module.devDependencies) {
         package.devDependencies[dep] = module.devDependencies[dep];
     }
-    if(!package.modules) {
+    if (!package.modules) {
         package.modules = {};
     }
     package.modules[name] = module.version;

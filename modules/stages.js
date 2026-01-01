@@ -5,13 +5,10 @@ const utils = require("../utils");
 module.exports = {
     name: "Stages module",
     description: "Module who provides stages for bot",
-    dependencies: {
-    },
-    devDependencies: {
-    },
+    dependencies: {},
+    devDependencies: {},
     version: "1.0.0",
-    params: {
-    },
+    params: {},
     ask: async (rl) => {
     },
     patch: () => {

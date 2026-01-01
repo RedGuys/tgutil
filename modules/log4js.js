@@ -8,9 +8,7 @@ module.exports = {
     dependencies: {
         "log4js": "^6.9.1"
     },
-    devDependencies: {
-
-    },
+    devDependencies: {},
     version: "1.0.0",
     params: {
         stdOutLevel: "info",
@@ -20,7 +18,7 @@ module.exports = {
     ask: async (rl) => {
         module.exports.params.stdOutLevel = await utils.ask(rl, "Enter stdout log level", "info");
         module.exports.params.logToFile = await utils.askYN(rl, "Log to file? (y/n)", "N");
-        if(module.exports.params.logToFile) {
+        if (module.exports.params.logToFile) {
             module.exports.params.file = await utils.ask(rl, "Enter file log", "latest.log");
         }
     },
@@ -36,7 +34,7 @@ module.exports = {
                 },
             }, categories: {default: {appenders: ['out'], level: module.exports.params.stdOutLevel}}
         };
-        if(module.exports.params.logToFile) {
+        if (module.exports.params.logToFile) {
             settings.appenders.file = {
                 type: 'file',
                 filename: module.exports.params.file

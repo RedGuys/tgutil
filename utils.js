@@ -91,7 +91,7 @@ module.exports = class Utils {
         if (start === -1) {
             return -1;
         }
-        let end = text.indexOf("## " + block + " ##", start+1);
+        let end = text.indexOf("## " + block + " ##", start + 1);
         if (end === -1) {
             return -1;
         }

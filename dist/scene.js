@@ -6,7 +6,7 @@ scene.enter(async (ctx) => {
     await ctx.reply('Text on scene start', {
         reply_markup: {
             inline_keyboard: [
-                [{text:"Close", callback_data: "exit"}]
+                [{text: "Close", callback_data: "exit"}]
             ]
         }
     });
@@ -19,10 +19,10 @@ scene.action('exit', async (ctx) => {
 });
 
 scene.on('text', async (ctx) => {
-    await ctx.reply('Text inputted: '+ctx.message.text, {
+    await ctx.reply('Text inputted: ' + ctx.message.text, {
         reply_markup: {
             inline_keyboard: [
-                [{text:"Close", callback_data: "exit"}]
+                [{text: "Close", callback_data: "exit"}]
             ]
         }
     });
